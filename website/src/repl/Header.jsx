@@ -32,16 +32,11 @@ export function Header({ context }) {
       className={cx(
         'flex-none text-black  z-[100] text-lg select-none',
         !isZen && !isEmbedded && 'bg-lineHighlight',
-        isZen ? 'h-12 w-8 fixed top-0 left-0' : 'sticky top-0 w-full py-1 justify-between',
+        isZen ? 'h-12 w-8 fixed top-0 left-0' : 'sticky top-0 w-full py-1 justify-start',
         isEmbedded ? 'flex' : 'md:flex',
       )}
     >
-      <div className="px-4 flex space-x-2 md:pt-0 select-none">
-        {/*             <img
-    src={logo}
-    className={cx('Tidal-logo', isEmbedded ? 'w-8 h-8' : 'w-10 h-10', started && 'animate-pulse')} // 'bg-[#ffffff80] rounded-full'
-    alt="logo"
-  /> */}
+      <div className="px-0 flex space-x-2 md:pt-0 select-none pl-[16px]">
         <h1
           onClick={() => {
             if (isEmbedded) window.open(window.location.href.replace('embed', ''));
@@ -58,14 +53,7 @@ export function Header({ context }) {
                 setIsZen(!isZen);
               }
             }}
-          >
-            🌀
-          </div>
-          {!isZen && (
-            <div className={cx(started && 'animate-pulse')}>
-              <span className="">strudel</span> <span className="text-sm">REPL</span>
-            </div>
-          )}
+          />
         </h1>
       </div>
       {!isZen && (
@@ -77,7 +65,6 @@ export function Header({ context }) {
           >
             {!pending ? (
               <span className={cx('flex items-center space-x-1', isEmbedded ? '' : 'w-16')}>
-                {started ? <StopCircleIcon className="w-6 h-6" /> : <PlayCircleIcon className="w-6 h-6" />}
                 {!isEmbedded && <span>{started ? 'stop' : 'play'}</span>}
               </span>
             ) : (
@@ -93,63 +80,8 @@ export function Header({ context }) {
               !isDirty || !activeCode ? 'opacity-50' : 'hover:opacity-50',
             )}
           >
-            {/*             <CommandLineIcon className="w-6 h-6" /> */}
-            <ArrowPathIcon className="w-6 h-6" />
             {!isEmbedded && <span>update</span>}
           </button>
-          {!isEmbedded && (
-            <button
-              title="shuffle"
-              className="hover:opacity-50 p-2 flex items-center space-x-1"
-              onClick={handleShuffle}
-            >
-              <SparklesIcon className="w-6 h-6" />
-              <span> shuffle</span>
-            </button>
-          )}
-          {!isEmbedded && (
-            <button
-              title="share"
-              className={cx(
-                'cursor-pointer hover:opacity-50 flex items-center space-x-1',
-                !isEmbedded ? 'p-2' : 'px-2',
-              )}
-              onClick={handleShare}
-            >
-              <LinkIcon className="w-6 h-6" />
-              <span>share{lastShared && lastShared === (activeCode || code) ? 'd!' : ''}</span>
-            </button>
-          )}
-          {!isEmbedded && (
-            <a
-              title="learn"
-              href="./workshop/getting-started"
-              className={cx('hover:opacity-50 flex items-center space-x-1', !isEmbedded ? 'p-2' : 'px-2')}
-            >
-              <AcademicCapIcon className="w-6 h-6" />
-              <span>learn</span>
-            </a>
-          )}
-          {/* {isEmbedded && (
-            <button className={cx('hover:opacity-50 px-2')}>
-              <a href={window.location.href} target="_blank" rel="noopener noreferrer" title="Open in REPL">
-                🚀
-              </a>
-            </button>
-          )}
-          {isEmbedded && (
-            <button className={cx('hover:opacity-50 px-2')}>
-              <a
-                onClick={() => {
-                  window.location.href = initialUrl;
-                  window.location.reload();
-                }}
-                title="Reset"
-              >
-                💔
-              </a>
-            </button>
-          )} */}
         </div>
       )}
     </header>

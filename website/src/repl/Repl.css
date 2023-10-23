@@ -57,3 +57,25 @@
 #code .cm-foldGutter {
   display: none !important;
 }
+
+.ͼgv {
+  color: #bd93f9; /* violet */
+}
+
+.ͼgx {
+  color: #f1fa8c; /* yellow */
+}
+
+.ͼgs {
+  color: #50fa7b; /* green */
+}
+
+.cm-scroller {
+  background-color: #282a36;
+}
+
+* {
+  font-family: 'Inter', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+}
