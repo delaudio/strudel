@@ -58,20 +58,20 @@
   display: none !important;
 }
 
-.ͼgv {
-  color: #bd93f9; /* violet */
+.ͼgv, .ͼh0 {
+  color: #C3C3C3; /* light grey */
 }
 
 .ͼgx {
-  color: #f1fa8c; /* yellow */
+  color: #78d5eb; /* light blue */
 }
 
-.ͼgs {
-  color: #50fa7b; /* green */
+.ͼgs, .ͼgq, .ͼgt {
+  color: #fcbc2f; /* yellow */
 }
 
 .cm-scroller {
-  background-color: #282a36;
+  background-color: #282728;
 }
 
 * {
